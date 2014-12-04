@@ -1,7 +1,46 @@
 # Polyfun
 
-Define function without any implementation:
+Polyfun allows you to write functions which supports single dispatch on type by first argument.
+It means you can write polymorphic functions or extend third-party functions for specific types.
+
+###### Define function without any implementation:
 
 ``` js
 var f = fun()
+```
+
+Add support for specific type:
+
+``` js
+f[Number] = function() {
+  return 'number'
+}
+f[12] // => 'number'
+```
+
+Or you can use fancy `define` which does exactly the same:
+
+``` js
+f.define(Number, function() {
+  return 'number'
+})
+f[12] // => 'number'
+f["12"] // => throw new TypeError("Type is not supported")
+```
+
+Type dispatching works on:
+
+* null
+* undefined
+* native types
+* custom types
+
+
+###### Define function with default implementation:
+
+``` js
+var indentity = fun(function(val) {
+  return val;
+})
+identity(1) // => 1
 ```

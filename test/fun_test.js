@@ -70,6 +70,7 @@ test('supports undefined', function(t) {
 test('supports functions without default implementation', function(t) {
   t.plan(1);
   var f = fun()
+  f()
   t.equal(1,1)
 })
 

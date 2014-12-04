@@ -1,7 +1,7 @@
-!function() {
+!function(root) {
   var toClass = {}.toString
 
-  var fun = function (func) {
+  fun = function (func) {
     var fn = function () {
       var f, obj;
       obj = arguments[0];
@@ -20,7 +20,7 @@
       } else if (func) {
         return func.apply(this, arguments)
       } else {
-        // throw 'Type is not supported'
+        throw new TypeError('Type is not supported');
       }
     }
 
@@ -37,6 +37,6 @@
     return fn
   }
 
-  module.exports = fun;
+    module.exports = fun;
 
-}()
+}(this)
