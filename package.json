@@ -6,7 +6,7 @@
     "tape": "~2.4.0"
   },
   "testling": {
-    "files": "test/fun_test.js",
+    "files": "test/*.js",
     "browsers": [
       "ie/6..latest",
       "chrome/22..latest",
@@ -19,6 +19,6 @@
     ]
   },
   "scripts": {
-    "test": "tape test/fun_test.js"
+    "test": "tape test/*.js"
   }
 }
