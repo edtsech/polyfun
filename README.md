@@ -61,5 +61,6 @@ f.hasDefault
 var indentity = fun(function(val) {
   return val;
 })
+
 identity(1) // => 1
 ```
