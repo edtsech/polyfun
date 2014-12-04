@@ -74,11 +74,11 @@ test('supports functions without default implementation', function(t) {
 })
 
 test('.isSupported returns true if current type is supported', function(t) {
-    t.plan(1);
+  t.plan(1);
   t.equal(f2.isSupported(String), true)
 })
 
 test('.hasDefault returns if function has a default implementation', function(t) {
-    t.plan(1);
+  t.plan(1);
   t.equal(f2.hasDefault, true)
 })
