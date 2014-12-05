@@ -12,23 +12,13 @@ var f = fun()
 Add support for specific type:
 
 ``` js
-f[Number] = function() {
-  return 'number'
-}
-
-f[12] // => 'number'
-```
-
-Or you can use fancy `define` which does exactly the same:
-
-``` js
 f.define(Number, function() {
   return 'number'
 })
 
-f[12] // => 'number'
+f(12) // => 'number'
 
-f["12"] // => throw new TypeError("Type is not supported")
+f("12") // => throw new TypeError("Type is not supported")
 ```
 
 Type dispatching works on:
@@ -48,13 +38,6 @@ Type dispatching works on:
 f.isSupported(String)
 ```
 
-##### How to check if 'poly' function has a default implementation?
-
-``` js
-// There is property for that:
-f.hasDefault
-```
-
 ##### Define function with default implementation:
 
 ``` js
@@ -64,3 +47,12 @@ var indentity = fun(function(val) {
 
 identity(1) // => 1
 ```
+
+##### How to check if 'poly' function has a default implementation?
+
+``` js
+// There is property for that:
+f.hasDefault
+```
+
+##### Extend existing functions
