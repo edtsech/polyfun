@@ -31,10 +31,7 @@ Type dispatching works on:
 ##### How to check if type is supported by particular "poly" function?
 
 ``` js
-// Simple version
-!!f[String]
-
-// Fancy version
+f.supportedTypes() // => {Number: fun...}
 f.isSupported(String)
 ```
 
@@ -51,8 +48,5 @@ identity(1) // => 1
 ##### How to check if 'poly' function has a default implementation?
 
 ``` js
-// There is property for that:
-f.hasDefault
+f.hasDefault()
 ```
-
-##### Extend existing functions
